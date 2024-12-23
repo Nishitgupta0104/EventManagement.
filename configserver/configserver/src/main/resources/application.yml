@@ -1,0 +1,20 @@
+server:
+  port: 9296
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          url: https://github.com/Nishitgupta0104/ConfigServer.git
+          clone-on-start: ture
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+      
